@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "124859672730",
+    "project_id": "n2-mob",
+    "storage_bucket": "n2-mob.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124859672730:android:2ad5387d23a6fc160fd723",
+        "android_client_info": {
+          "package_name": "com.hassuma.filmesCRUD"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMz4W9zkUObY9zQ80nSrVlqV3qCDhOYN8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
