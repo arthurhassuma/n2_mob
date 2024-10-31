@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       // Título do aplicativo
-      title: 'Movies CRUD',
+      title: 'MovieList',
 
       // Tema do aplicativo
       theme: ThemeData(
