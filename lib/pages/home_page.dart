@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MovieList'),
+        title: Text('Movie List'),
       ),
       body: Obx(() {
         // Constrói uma lista de filmes observável
