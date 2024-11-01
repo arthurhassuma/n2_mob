@@ -1,4 +1,3 @@
-// home_page.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../controllers/movie_controller.dart';
@@ -15,37 +14,41 @@ class HomePage extends StatelessWidget {
         title: Text('Movie List'),
       ),
       body: Obx(() {
-        // Constrói uma lista de filmes observável
         return ListView.builder(
           itemCount: movieController.movies.length,
           itemBuilder: (context, index) {
             final movie = movieController.movies[index];
             return ListTile(
-              title: Text(movie.title),
-              subtitle: Text(movie.description),
+              title: Text(
+                movie.title,
+                style: TextStyle(color: Color(0xFFFFFFFF)), // Título branco
+              ),
+              subtitle: Text(
+                movie.description,
+                style: TextStyle(color: Color(0xFF564d4d)), // Subtítulo cinza
+              ),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Texto que mostra o status
                   Text(
                     movie.isWatched ? 'Assistido' : 'A Assistir',
                     style: TextStyle(
-                      color: movie.isWatched ? Colors.green : Colors.red,
+                      color: movie.isWatched ? Color(0xFF831010) : Color(0xFFdb0000),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(width: 10), // Espaçamento entre o texto e o switch
+                  SizedBox(width: 10),
                   Switch(
+                    activeColor: Color(0xFFdb0000), // Cor do switch
                     value: movie.isWatched,
                     onChanged: (value) {
-                      movie.isWatched = value; // Atualiza o status
-                      movieController.updateMovie(movie); // Atualiza o filme no controlador
+                      movie.isWatched = value;
+                      movieController.updateMovie(movie);
                     },
                   ),
                 ],
               ),
               onTap: () {
-                // Navega para a página de edição ao tocar no item
                 Get.to(EditPage(movie: movie));
               },
             );
@@ -53,10 +56,8 @@ class HomePage extends StatelessWidget {
         );
       }),
       floatingActionButton: FloatingActionButton(
-        // Navega para a página de adição ao pressionar o botão
         onPressed: () => Get.to(AddPage()),
         child: Icon(Icons.add, color: Colors.white),
-        backgroundColor: Colors.green,
       ),
     );
   }
